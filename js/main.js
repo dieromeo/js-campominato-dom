@@ -35,6 +35,12 @@ function createNcells(htmlElement, num, className) { // funzione che crea n elem
                 punteggioUtente.classList.remove('inactive');
                 punteggioUtente.textContent = `Il tuo punteggio è: ${contatore}`;
 
+                if (contatore === (num - 16)) {
+                    board.classList.add('inactive');
+                    infoUtente.classList.remove('inactive');
+                    infoUtente.innerText = `Hai vinto con un punteggio di: ${contatore}`;
+                    punteggioUtente.classList.add('inactive');
+                }
 
             }
         })
@@ -82,13 +88,14 @@ function campoMinato() {
         boardContainer.append(board);
         createByDifficulty(select);
         infoUtente.classList.add('inactive');
+
         state = false;
     }
 }
 
 function randomArray(difficulty) {
     const arrayCasuale = [];
-    while (arrayCasuale.length < 16) {
+    while (arrayCasuale.length < numeroBombe) {
         const arrayElement = Math.floor(Math.random() * difficulty + 1);
         if (!arrayCasuale.includes(arrayElement)) {
             arrayCasuale.push(arrayElement);
@@ -101,6 +108,7 @@ function randomArray(difficulty) {
 
 // end function
 
+const numeroBombe = 16;
 const startButton = document.getElementById('start'); // variabile bottone
 const boardContainer = document.querySelector('.board-container'); // variabile board container
 let state = true; // variabile di stato
@@ -111,8 +119,7 @@ const alreadyClicked = [];
 let contatore = 0;
 const punteggioUtente = document.getElementById('punteggio');
 let gameOver = false;
-
-
+let winner = false;
 
 startButton.addEventListener('click', campoMinato);
 

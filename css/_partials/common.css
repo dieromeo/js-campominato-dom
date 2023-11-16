@@ -43,6 +43,7 @@ main {
     align-items: center;
 }
 
+.board.inactive,
 .inactive {
     display: none;
 }
