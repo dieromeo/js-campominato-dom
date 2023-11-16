@@ -92,3 +92,7 @@ MAIN
 .board>div.red {
     background-color: red;
 }
+
+.punteggio {
+    text-align: center;
+}

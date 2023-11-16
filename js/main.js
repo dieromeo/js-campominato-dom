@@ -19,21 +19,24 @@ function createNcells(htmlElement, num, className) { // funzione che crea n elem
         const cell = myCreateDomElement('div', className, i);
         htmlElement.append(cell);
         cell.addEventListener('click', function () { // aggiunge evento click sulle celle
-            if (valoriBombe.includes(parseInt(cell.innerHTML))) {
-                console.log('sono una bomba');
-                cell.classList.add('red');
-            }
+            if (!gameOver) {
+                if (valoriBombe.includes(parseInt(cell.innerHTML))) {
+                    console.log('sono una bomba');
+                    cell.classList.add('red');
+                    gameOver = true;
+                }
 
-            else if (!alreadyClicked.includes(parseInt(cell.innerHTML))) {
-                alreadyClicked.push(parseInt(cell.innerHTML));
-                console.log(alreadyClicked);
-                clicked(cell, 'yellow');
-                contatore++;
-                console.log(contatore);
-            }
+                else if (!alreadyClicked.includes(parseInt(cell.innerHTML))) {
+                    alreadyClicked.push(parseInt(cell.innerHTML));
+                    clicked(cell, 'yellow');
+                    contatore++;
+                }
 
-            punteggioUtente.classList.remove('inactive');
-            punteggioUtente.textContent = `Il tuo punteggio è: ${contatore}`;
+                punteggioUtente.classList.remove('inactive');
+                punteggioUtente.textContent = `Il tuo punteggio è: ${contatore}`;
+
+
+            }
         })
     }
 }
@@ -68,6 +71,8 @@ function campoMinato() {
     if (!state) { // se è falso rimuove gli elementi del dom e lo imposta a vero per un reset 
         board.remove();
         state = true;
+        gameOver = false;
+        contatore = 0;
     }
 
     if (state) { // crea e aggiunge gli elementi al dom e imposta state a false per un successivo click
@@ -105,6 +110,7 @@ let valoriBombe;
 const alreadyClicked = [];
 let contatore = 0;
 const punteggioUtente = document.getElementById('punteggio');
+let gameOver = false;
 
 
 
