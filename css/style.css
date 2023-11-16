@@ -88,3 +88,7 @@ MAIN
 .board>div.yellow {
     background-color: yellow;
 }
+
+.board>div.red {
+    background-color: red;
+}
