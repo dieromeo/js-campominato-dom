@@ -1,0 +1,90 @@
+/*
+IMPORT
+*/
+
+@import url('_partials/reset.css');
+@import url('_partials/common.css');
+@import url('_partials/variables.css');
+
+/*
+HEADER
+*/
+
+header .left {
+    display: flex;
+    align-items: center;
+}
+
+header .right {
+    display: flex;
+    align-items: center;
+}
+
+header .right span {
+    font-size: 18px;
+}
+
+header button,
+header select {
+    background-color: var(--button-color);
+    border: .125rem solid grey;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+header img {
+    margin-right: 1.5625rem;
+    height: 3.75rem;
+}
+
+header button {
+    padding: .125rem 2.5rem;
+}
+
+header select {
+    padding: .125rem 10.3125rem .125rem .125rem;
+    margin: 0 .3125rem;
+    font-size: 1rem;
+}
+
+
+/*
+MAIN
+*/
+
+.board {
+    width: 31.25rem;
+    height: 31.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: gray;
+    align-content: flex-start;
+}
+
+.board>div {
+    background-color: aqua;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell-10 {
+
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.cell-9 {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.cell-7 {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
+
+.board>div.yellow {
+    background-color: yellow;
+}

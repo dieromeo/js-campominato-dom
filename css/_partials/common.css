@@ -1,0 +1,52 @@
+/*
+COMMON
+*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+header,
+footer {
+    background-color: var(--bg-head-foot)
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5625rem;
+    padding-bottom: 2.1875rem;
+}
+
+button {
+    all: unset;
+}
+
+footer {
+    padding: 1.5625rem;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inactive {
+    display: none;
+}
+
+a {
+    color: var(--link-color);
+}
