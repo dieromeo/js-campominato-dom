@@ -79,6 +79,7 @@ function campoMinato() {
         state = true;
         gameOver = false;
         contatore = 0;
+        alreadyClicked = [];
     }
 
     if (state) { // crea e aggiunge gli elementi al dom e imposta state a false per un successivo click
@@ -115,7 +116,7 @@ let state = true; // variabile di stato
 let board;
 const infoUtente = document.getElementById('info'); // h2 da nascondere al click
 let valoriBombe;
-const alreadyClicked = [];
+let alreadyClicked = [];
 let contatore = 0;
 const punteggioUtente = document.getElementById('punteggio');
 let gameOver = false;
