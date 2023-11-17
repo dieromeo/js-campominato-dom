@@ -1,7 +1,5 @@
 'use strict';
 
-// fragment
-
 // Function 
 
 function myCreateDomElement(tag, className, content) { // funzione che crea un elemento html con contenuto
@@ -94,7 +92,7 @@ function campoMinato() {
     }
 }
 
-function randomArray(difficulty) {
+function randomArray(difficulty) { // funzione che restituisce un array di numeri casuali diversi fino a difficulty
     const arrayCasuale = [];
     while (arrayCasuale.length < numeroBombe) {
         const arrayElement = Math.floor(Math.random() * difficulty + 1);
@@ -116,8 +114,8 @@ let state = true; // variabile di stato
 let board;
 const infoUtente = document.getElementById('info'); // h2 da nascondere al click
 let valoriBombe;
-let alreadyClicked = [];
-let contatore = 0;
+let alreadyClicked = []; // array dove inserire celle già cliccate
+let contatore = 0;  // contatore per il punteggio
 const punteggioUtente = document.getElementById('punteggio');
 let gameOver = false;
 let winner = false;
