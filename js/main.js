@@ -55,19 +55,18 @@ function createByDifficulty(difficulty) {  // funzione che richiama ceateNcells 
         createNcells(board, 100, 'cell-10');
         randomArray(100);
         valoriBombe = randomArray(100);
-        console.log(valoriBombe);
     }
+
     else if (difficulty === 'Normal') {
         createNcells(board, 81, 'cell-9');
         randomArray(81);
         valoriBombe = randomArray(81);
-        console.log(valoriBombe);
     }
+
     else if (difficulty === 'Hard') {
         createNcells(board, 49, 'cell-7');
         randomArray(49);
         valoriBombe = randomArray(49);
-        console.log(valoriBombe);
     }
 }
 
